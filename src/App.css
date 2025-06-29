@@ -1,0 +1,31 @@
+
+.form_container{
+  width: 30%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+.checkblock{
+  display: flex;
+}
+.check{
+  margin-left: 100px;
+}
+.buton{
+  color: blue;
+  text-decoration: underline;
+  border:none;
+  cursor: pointer;
+  background-color: white;
+}
+.time{
+  font-weight: 120px;
+}
+@media screen and(max-width:1000px) {
+  .form_container{
+  width: 45%;
+}
+}
+@media screen and(max-width:700px) {
+  .form_container{
+  width: 65%;
+}
+}
