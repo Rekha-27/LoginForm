@@ -1,12 +1,54 @@
-# React + Vite
+ Overview
+This submission is a login interface built in React using Bootstrap, designed according to the functional and UI requirements specified in the task document.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 Live Demo: https://loginvalidate.netlify.app/
 
-Currently, two official plugins are available:
+🛠️ Features Implemented
+🔐 1. Login with Form Validation
+Validates proper email format and password length (minimum 6 characters)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Invalid fields are highlighted with red borders and inline messages
 
-## Expanding the ESLint configuration
+💾 2. “Remember Me” Feature
+When checked, the app stores login attempts and lock status in localStorage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+When unchecked, login attempts are tracked only in-memory using React useState (session-only)
+
+🚫 3. Account Locking
+After 5 failed attempts, account is locked
+
+Remember Me checked → lock persists across refresh
+
+Unchecked → lock clears on refresh (session-only lock)
+
+⏳ 4. Auto Unlock After 2 Hours
+Locked users with "Remember Me" are automatically unlocked after 2 hours
+
+🧠 5. License Expiry Check
+If the system date is beyond 2025-07-27, login is blocked with a license expiry message
+
+🔑 6. Password Reset (Popup)
+"Forget Password?" opens a Bootstrap modal
+
+Clicking Next simulates a password reset request
+
+Clicking Close exits the modal cleanly
+
+👁️ 7. Show/Hide Password Toggle
+Password field visibility can be toggled using a checkbox
+
+🧪 Testing Credentials
+Field	Value
+Email	valmikirekha@gmail.com
+Password	rekha123
+
+Any other credentials will be treated as invalid.
+
+📁 Technologies Used
+React (with functional components and hooks)
+
+Bootstrap 5 for responsive UI styling
+
+React Router DOM for navigation (useNavigate)
+
+localStorage for persistent user state
